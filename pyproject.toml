@@ -1,11 +1,16 @@
 [tool.poetry]
 name = "menta"
-version = "0.0.1"
+version = "0.0.1-alpha.0"
 description = "Secure, simple and easy to use API token format"
 authors = ["Alexander Bakker <ab@alexbakker.me>"]
 license = "MIT"
 readme = "README.md"
-
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+]
+keywords = ["api", "token", "xchacha20", "poly1305"]
 homepage = "https://github.com/alexbakker/menta"
 repository = "https://github.com/alexbakker/menta"
 documentation = "https://github.com/alexbakker/menta"

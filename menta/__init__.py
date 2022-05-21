@@ -13,6 +13,8 @@ from nacl.utils import random
 from . import errors
 from .utils import b64decode, b64encode
 
+__all__ = ["Menta", "TokenData"]
+
 
 @dataclass
 class TokenData:
