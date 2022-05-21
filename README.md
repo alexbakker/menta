@@ -1,4 +1,4 @@
-# menta [![build](https://github.com/alexbakker/menta/actions/workflows/build.yaml/badge.svg)](https://github.com/alexbakker/menta/actions/workflows/build.yaml?query=branch%3Amaster) ![coverage](https://alexbakker.me/gh/targets/menta/artifacts/coverage/coverage.svg) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+# menta [![build](https://github.com/alexbakker/menta/actions/workflows/build.yaml/badge.svg)](https://github.com/alexbakker/menta/actions/workflows/build.yaml?query=branch%3Amaster) ![coverage](https://alexbakker.me/gh/targets/menta/artifacts/coverage/coverage.svg) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![PyPi version](https://img.shields.io/pypi/v/menta)
 
 __menta__ is a secure, simple and easy to use API token format. It uses
 __XChaCha20-Poly1305__ symmetric authenticated encryption to create encrypted
@@ -81,7 +81,7 @@ must be randomly generated using the operating system's CSPRNG.
 
 #### Version indicator
 
-Every Menta token starts with a version indicator: ``v1:``.
+Every Menta token starts with a version indicator: ``v1:``
 
 #### Body
 
