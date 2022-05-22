@@ -108,6 +108,11 @@ def test_encode_bad_timestamp(menta: Menta) -> None:
         menta.encode(TokenData(_payload, "bad_timestamp_type"))  # type: ignore[arg-type]
 
 
+def test_encode_bad_data(menta: Menta) -> None:
+    with pytest.raises(TypeError):
+        menta.encode("bad_data")  # type: ignore[arg-type]
+
+
 def test_encode_with_random_nonce(menta: Menta) -> None:
     exp_token = "v1:bXWGWsQYw6ipOEm0QwnCqRRQZC1v8GQ-ZtDouKbmDuRmvjnw1pdotOx5NwqVjptty-g_F_BvNfUabYqpCX-hzbON16JQ6w"
     data = TokenData(bytes.fromhex(_payload), _timestamp)
