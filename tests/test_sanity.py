@@ -3,7 +3,7 @@ import os
 from menta import Menta
 
 
-def test_sanity():
+def test_sanity() -> None:
     key = os.urandom(Menta.KEY_SIZE)
     menta = Menta(key)
     assert menta.key == key

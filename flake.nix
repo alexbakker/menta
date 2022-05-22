@@ -9,7 +9,7 @@
         overlay = final: prev: {
           menta = with final; python3Packages.buildPythonPackage rec {
             pname = "menta";
-            version = "0.0.1";
+            version = "0.0.1a1";
             src = ./.;
             format = "pyproject";
 
@@ -49,6 +49,7 @@
               ps.black
               ps.coverage
               ps.freezegun
+              ps.mypy
               ps.poetry
               ps.pylint
               ps.pytest

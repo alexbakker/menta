@@ -38,7 +38,7 @@ class Menta:
         self._key = key
         self._aead = Aead(key)
 
-        self._nonce = None
+        self._nonce: Optional[bytes] = None
         """NEVER assign anything but None to this variable. In tests, this
         variable is used to bypass random nonce generation."""
 
@@ -100,7 +100,7 @@ class Menta:
         msg = self._aead.encrypt(t + payload, aad, nonce)
         return f"{self.VERSION}:{b64encode(nonce + msg.ciphertext).decode('utf-8')}"
 
-    def decode(self, token: str, ttl: int = None) -> TokenData:
+    def decode(self, token: str, ttl: Optional[int] = None) -> TokenData:
         """
         Decodes the given Menta token. All types of exceptions that this method
         can throw are subclasses of `MentaError`, so you can catch that
@@ -147,15 +147,15 @@ class Menta:
         ciphertext = body_bytes[self._aead.NONCE_SIZE :]
 
         try:
-            body = self._aead.decrypt(ciphertext, aad, nonce)
+            plaintext = self._aead.decrypt(ciphertext, aad, nonce)
         except nacl.exceptions.CryptoError as e:
             raise errors.DecryptError("Unable to decrypt token") from e
 
-        timestamp = struct.unpack(">Q", body[: self.TIMESTAMP_SIZE])[0]
+        timestamp = struct.unpack(">Q", plaintext[: self.TIMESTAMP_SIZE])[0]
         if ttl is not None and (time.time() - timestamp) > ttl:
             raise errors.ExpiredError("Token has expired")
 
-        payload = body[self.TIMESTAMP_SIZE :]
+        payload = plaintext[self.TIMESTAMP_SIZE :]
         return TokenData(payload, timestamp)
 
     @classmethod

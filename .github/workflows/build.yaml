@@ -10,6 +10,8 @@ jobs:
         run: |
           python3 -m pip install poetry
           poetry install
+      - name: Type checks
+        run: poetry run mypy .
       - name: Run tests
         run: |
           poetry run coverage run --source=menta -m pytest && poetry run coverage report -m
