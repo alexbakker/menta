@@ -73,6 +73,8 @@ class Menta:
         Raises:
             TypeError: Invalid type of arguments.
         """
+        if not isinstance(data, TokenData):
+            raise TypeError("Data must be of type TokenData")
         payload = data.payload
         if isinstance(payload, str):
             payload = payload.encode("utf-8")
