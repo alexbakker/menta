@@ -19,6 +19,7 @@
 
             checkInputs = with pkgs.python3Packages; [
               freezegun
+              pytest-benchmark
               pytestCheckHook 
             ];
 
@@ -53,6 +54,7 @@
               ps.poetry
               ps.pylint
               ps.pytest
+              ps.pytest-benchmark
               ps.pynacl
             ]
           );

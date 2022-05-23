@@ -25,6 +25,7 @@ coverage = "^6.3.3"
 coverage-badge = "^1.1.0"
 freezegun = "^1.2.1"
 pytest = "^7.1.2"
+pytest-benchmark = "^3.4.1"
 pylint = "^2.13.8"
 mypy = "^0.950"
 
