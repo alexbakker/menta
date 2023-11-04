@@ -93,9 +93,9 @@ Every Menta token contains the time at which it was generated: A Unix timestamp
 ##### Payload
 
 The payload is a binary blob of arbitrary length. We recommend using a
-serialization format like [MessagePack](https://pydantic-docs.helpmanual.io/) or
-[Protocol Buffers](https://developers.google.com/protocol-buffers) to encode the
-payload. If you prefer JSON, use a strict library like
+serialization format like [Protocol
+Buffers](https://developers.google.com/protocol-buffers) to encode the payload.
+If you prefer JSON, use a strict library like
 [Pydantic](https://pydantic-docs.helpmanual.io/) to validate the payload.
 
 #### Nonce
