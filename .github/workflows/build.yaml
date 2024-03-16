@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install
         run: |
           python3 -m pip install poetry
@@ -19,7 +19,7 @@ jobs:
         run: |
           poetry run coverage html
           poetry run coverage-badge -o coverage.svg
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: |
