@@ -51,7 +51,7 @@
               ps.coverage
               ps.freezegun
               ps.mypy
-              ps.poetry
+              ps.poetry-core
               ps.pylint
               ps.pytest
               ps.pytest-benchmark
